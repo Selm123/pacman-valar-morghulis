@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Pacman Vanamogulis
+game of life, not today, it’s not anyone else’s story, it’s your story
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features (top to low priority):
+1. Make a working pac man game
+1> Using arrow key to control
+2> Paman keep going with one key press
+3> Have initial health points of 1, have age start from 0 and keep going up
+4> When encounter ghosts, pacman will reduce health point by 1 and ghost would be killed (and regenrated in its birth place)
+5> Randomly generated Energizer at random position, could increase health points, use heart
+6> After age 60, pacman's health points will keep droping
+7> Game music 
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. main things: health, age, money, achivements, happiness. Born with random health (1-10), random money (-1000000--1000000)
+2. young to old (old move slower and get more damage and ghosts are regenrated faster, full screen of ghosts), born with random health points (1-10) and die any way, difference is happy points and achievement points
+2. ghosts 4 horseman disease poverty accident lonliness. Before health points reduced to zero, captured by ghosts would not die instancely but reduce health points and kill the ghost and show "not today!". Ghosts number are 4 before age 18 (regenerate after been killed by pacman)
+3. have items to eat, randomly generated, increase health points (rare) or happy points (random num at random place) or achievement points (same) or money (same)
+4. ppl could upload to cloudinary to make their own game
+5. control mode: keyboard, voice (at least make this one), face recognition, gravity (hardcore)
+6. share with social media, how old, killed by, beat 97%
+7. weekly rank, monthly rank, all time rank; saved format:
+username, achivements, happiness, age, initial health, initial money, killed by
+8. Could use money to bomb 4 ghosts
+9. Replaced with icon and show tooltip on hovering
+10. valar moghulis as background
+11. random initial points
