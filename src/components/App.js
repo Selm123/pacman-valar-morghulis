@@ -1,5 +1,4 @@
 import Game from "./Game";
-import $ from "jquery";
 
 function App() {
   return (

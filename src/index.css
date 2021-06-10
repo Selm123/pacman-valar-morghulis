@@ -1,23 +1,424 @@
+@font-face {
+  font-family: 'got-font';
+  src: URL('/src/fonts/GameOfThrones.ttf') format('truetype');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: yellow;
+  background-color: black;
+  color:white;
+  /* border: 12px solid blue;
+  height: 97vh; */
+}
+
+#age1 {
+  font-size: 140%;
+  margin-top: 0;
+}
+
+.sub-title {
+  font-family: "got-font";
+  font-size: 160%;
+  color: white;
+}
+
+.title {
+  text-align: center;
+  width: 80vw;
+  background-color: rgb(27,27,223);
+  margin: 0 auto;
+  position: absolute;
+  left:10vw;
+  top:10vh;
+  height: 80vh;
+  border-radius: 2em;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 150%;
+  color: white;
+  font-weight: bolder;
+}
+
+.vm {
+  color: rgb(27,27,223);
+}
+
+label {
+  margin: 16px;
+}
+
+#title-start {
+  margin-top: 10px;
+  background-color:rgb(252,208,0);
+  width: 12vw;
+  height: 6vh;
+  font-size: 60%;
+  border:0;
+  font-weight: bolder;
+  font-family: "got-font";
+}
+
+.title-text {
+  margin-top: 10vh;
+}
+
+.usernameInput {
+  font-size: 80%;
+  width: 20vw;
+  padding:8px;
+  /* padding-left: 12px; */
+  margin-bottom: 12px;
+  /* color:rgba(252, 210, 0, 0.050); */
+  text-align: center;
+}
+
+
+.title-text-p {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-image: url('/src/images/P.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.title-text-a {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-image: url('/src/images/A.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.title-text-c {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-image: url('/src/images/C.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.title-text-m {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-image: url('/src/images/M.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.title-text-n {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-image: url('/src/images/N.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .hide {
   display: none;
-  color: red;
 }
 
-h3 {
-  color: red;
+.show {
+  display: block;
 }
+
+#start-btn {
+  background-color: rgb(252,208,0);
+  color:black;
+  font-size: 60%;
+  font-weight: bolder;
+  font-family: "got-font";
+  position: relative;
+  top: 7vh;
+  width: 10vw;
+  height: 5vh;
+  border: 0;
+}
+
+.main {
+  width: 40vw;
+  margin: 0 auto;
+  margin-top: 5vh;
+}
+
+.play {
+  font-size: 150%;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 8px;
+}
+
+.game-over-border {
+  border: 2px blue solid;
+  border-radius: 8px;
+  padding-left: 32px;
+  padding-top:24px;
+  padding-bottom:24px;
+}
+
+#game-over-p {
+  margin-bottom: 0;
+}
+
+.killer-name {
+  color: rgb(252,208,0);
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.underline {
+  margin-top: -8px;
+  margin-bottom: 40px;
+  color: rgba(252,208,0,0.5);
+}
+
+#cake {
+  width: 2vw;
+  height: 4vh;
+  display: inline-block;
+  background-image: url('./images/wedding-cake.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: -8px;
+  margin-right: 4px;
+}
+
+#money {
+  width: 2vw;
+  height: 4vh;
+  display: inline-block;
+  background-image: url('./images/money.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: -8px;
+  margin-right: 4px;
+}
+
+#heart {
+  width: 2vw;
+  height: 4vh;
+  display: inline-block;
+  background-image: url('./images/heart.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: -8px;
+  margin-right: 4px;
+}
+
+.underline-1 {
+  margin-top: -32px;
+  margin-bottom: 40px;
+  color: rgba(252,208,0,0.9);
+}
+
+.gameBacgroundDiv {
+  z-index: -2;
+  background-size: contain;
+  display: flex;
+  flex-wrap: wrap;
+  width: 560px;
+  height: 560px;
+}
+
+.game-over-border-2 {
+  border: 2px solid rgb(27,27,223);
+  border-radius: 10px; 
+  padding: 6px;
+}
+
+.gameBacgroundDiv div {
+  width: 20px;
+  height: 20px;
+}
+
+.wall {
+  background-color: blue;
+}
+
+.pac-dot {
+  font-size: 40px;
+  color: orange;
+  margin: 0;
+  line-height: 0;
+  text-align: center;
+  z-index: -2;
+}
+
+.power-pellet {
+  background-image: radial-gradient(orange 55%, transparent 5%);
+  z-index: -1;
+}
+
+.left-info {
+  padding: 16px;
+  position: absolute;
+  left:10vw;
+  top: 20vh;
+  width: 15vw;
+  height: 50vh;
+  background-color: black;
+  color: white;
+  text-align: left;
+  font-family: "got-font";
+  font-size: 80%;
+  font-weight: bolder;
+}
+
+.right-info {
+  padding: 16px;
+  position: absolute;
+  right:10vw;
+  top: 20vh;
+  width: 15vw;
+  height: 50vh;
+  background-color: black;
+  color: white;
+  text-align: left;
+  font-family: "got-font";
+  font-size: 80%;
+  font-weight: bolder;
+}
+
+.all-die {
+  font-size: 70%;
+}
+
+.not-today {
+  color: rgb(252,208,0);
+}
+
+.it-is-today {
+  color: rgb(252,208,0);
+}
+
+div .border-horizontal {
+  background-image: url(./images/border-h.png);
+  background-size: contain;
+}
+
+div .border-vertical {
+  background-image: url(./images/border-v.png);
+  background-size: contain;
+}
+
+div .border-upleft {
+  background-image: url(./images/border-upleft.png);
+  background-size: contain;
+}
+
+div .border-upright {
+  background-image: url(./images/border-upright.png);
+  background-size: contain;
+}
+
+div .border-bottomleft {
+  background-image: url(./images/border-bottomleft.png);
+  background-size: contain;
+}
+
+div .border-bottomright {
+  background-image: url(./images/border-bottomright.png);
+  background-size: contain;
+}
+
+div .inner-border-h {
+  background-image: url(./images/inner-border-h.png);
+  background-size: contain;
+}
+
+div .inner-border-v {
+  background-image: url(./images/inner-border-v.png);
+  background-size: contain;
+}
+
+.pacman-right {
+  background-image: url('images/pacman-right.gif');  
+  background-size: contain;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.pacman-right-before-start {
+  background-image: url('images/pacman-right-before-start.png');  
+  background-size: contain;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.pacman-death {
+  background-image: url('images/pacman-death.gif');  
+  background-size: contain;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.pacman-left {
+  background-image: url('images/pacman-left.gif'); 
+  background-size: contain; 
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.pacman-up {
+  background-image: url('images/pacman-up.gif');  
+  background-size: contain; 
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.pacman-down {
+  background-image: url('images/pacman-down.gif');  
+  background-size: contain; 
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.enemy {
+  z-index: +2;
+}
+
+.accident {
+  background-image: url('./images/accident.png');
+  z-index: +2;
+}
+
+.disease {
+  background-image: url('./images/disease.png');
+  z-index: +2;
+}
+
+.loneliness {
+  background-image: url('./images/loneliness.png');
+  z-index: +2;
+}
+
+.poverty {
+  background-image: url('./images/poverty.png');   
+  z-index: +2; 
+}
+
+.explosion {
+  background-image: url('./images/explosin-2.gif');
+  background-size: contain;
+}
+
+.play {
+  text-align: center;
+}
+
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

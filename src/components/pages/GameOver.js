@@ -7,7 +7,7 @@ class GameOver extends Component {
   }
   render() {
     return (
-      <div className="GameOver hide">
+      <div className="gameover hide">
         <h1>GameOver</h1>
       </div>
     );
