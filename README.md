@@ -1,37 +1,18 @@
 # Pacman Vanamogulis
-ALL MEN MUST DIE
+Click the link to have fun!
+
+https://pacman-valar-morghulis.surge.sh/
+
+[ALL MEN MUST DIE
 
 But maybe
 
 Not today?
 
-It's not anyone else's story, it's your story.
+It's not anyone else's story, it's your story.]
 
 
-## Schedule
-
-* Thursday:  
-rewrite code format
-change ghosts pics when they go different directions
-share with social media
-
-adjust game difficulty
-fix the bug that enemy go through 393/418
-alan ai not enough fund trigger
-
-
-
-## Future iterations:
-
-## Features (top to low priority):
-0. Make a working pac man game
-1> Using arrow key to control
-2> Paman keep going with one key press
-3> Have initial health points of 1, have age start from 0 and keep going up
-4> When encounter ghosts, pacman will reduce health point by 1 and ghost would be killed (and regenrated in its birth place)
-5> Randomly generated Energizer at random position, could increase health points, use heart
-6> After age 60, pacman's health points will keep droping
-7> Game music 
+## Future iterations(top to low priority):
 
 1. main things: health, age, fortune, achivements, happiness. Born with random health (1-10), random money (-1000000--1000000)
 2. young to old (old move slower and get more damage and ghosts are regenrated faster, full screen of ghosts), born with random health points (1-10) and die any way, difference is happy points and achievement points
