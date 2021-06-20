@@ -3,13 +3,13 @@ Click the link to have fun!
 
 https://pacman-valar-morghulis.surge.sh/
 
-[ALL MEN MUST DIE
+>*ALL MEN MUST DIE*
 
-But maybe
+>*But maybe*
 
-Not today?
+>*Not today?*
 
-It's not anyone else's story, it's your story.]
+>*It's not anyone else's story, it's your story.*
 
 
 ## Future iterations(top to low priority):
