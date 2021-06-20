@@ -147,7 +147,7 @@ class Play extends Component {
         }
       }
     }
-    createGameBackground()
+    createGameBackground();
 
     // pacman initial position and remove functions
     let pacmanCurrentIndex = 629
@@ -173,6 +173,7 @@ class Play extends Component {
       }
       if (grids[pacmanCurrentIndex].classList.contains('power-pellet')) {
         this.playEatBig();
+        // 42 is the purpose of the universe
         this.setState({fortune: this.state.fortune + 42});      
         grids[pacmanCurrentIndex].classList.remove('power-pellet')
         $(grids[pacmanCurrentIndex]).text('');
@@ -275,7 +276,7 @@ class Play extends Component {
     }
 
     $(window).on("keydown", (e) => {
-      console.log(pacmanCurrentIndex)
+      // console.log(pacmanCurrentIndex)
       if (this.state.started) {
         switch (e.key) {
           case "ArrowRight":
@@ -320,9 +321,7 @@ class Play extends Component {
         let enemy = _($('.enemy-cave').toArray()).sample();
         enemy.classList.add(`${enemiesTypes[i]}`);
         enemy.classList.add('enemy');
-        // enemy.classList.remove('enemy-cave');
         enemies.push(new Enemy(`${enemiesTypes[i]}`, grids.indexOf(enemy), 500));
-        // console.log(enemies);
       }
     }
 
@@ -342,14 +341,15 @@ class Play extends Component {
 
       enemy.timerId = setInterval(function() {
         if (pathes.some(p => grids[enemy.currentIndex + direction].classList.contains(p))) {
-            //remove the enemy
             grids[enemy.currentIndex].classList.remove(enemy.type)
             grids[enemy.currentIndex].classList.remove('enemy')
             
             enemy.currentIndex += direction
             grids[enemy.currentIndex].classList.add(enemy.type, 'enemy')
-        //else find a new random direction ot go in
-        } else direction = _(directions).sample();
+        
+        } else {
+          direction = _(directions).sample();
+        }
       }, 300)
     }
         
@@ -361,26 +361,27 @@ class Play extends Component {
 
     function timePass() {
       ageId = setInterval(getOld, 1200);
-      // setInterval(()=>console.log(enemies.length),5000);
     }
 
-    //check for a game over
+    //check for health when encounting enemy
     let healthId;
     let currentClassList;
     const checkForHealth = () => {
       if (grids[pacmanCurrentIndex].classList.contains('enemy')) {
+        // always save a copy of global variables first
         let currentIndex = pacmanCurrentIndex;
         currentClassList=grids[currentIndex].classList;
-        console.log(currentClassList);
         this.setState({health: this.state.health - 1});
         this.playExplosion();
 
+        // explosion animation and sound effect
         grids[currentIndex].classList.add('explosion');
         const removeExplosion = () => {
           grids[currentIndex].classList.remove('explosion')
         }
         setTimeout(removeExplosion,1600);
 
+        // enemy killed and disappeared
         setTimeout(()=>{
           grids[currentIndex].classList.remove('enemy');
           grids[currentIndex].classList.remove('accident');
@@ -388,12 +389,11 @@ class Play extends Component {
           grids[currentIndex].classList.remove('poverty');
           grids[currentIndex].classList.remove('loneliness');
         }, 1000)
-        console.log(enemies.filter(e=>e.currentIndex===currentIndex)[0])
+  
+        // move enemy back to the cave after they're killed
         if(enemies.filter(e=>e.currentIndex===currentIndex)[0]){
           enemies.filter(e=>e.currentIndex===currentIndex)[0].currentIndex = _([405,406,377,378]).sample();
         }
-        // clearInterval(enemies.filter(e=>e.currentIndex===currentIndex)[0].timerId)
-        // enemies.filter(e=>e.currentIndex===currentIndex)[0].currentIndex=629;
       }
     }
 
@@ -401,6 +401,7 @@ class Play extends Component {
 
     let enemyMoveId;
 
+    // check game over
     const checkForGameOver = () => {
       if (this.state.health <= 0) {
         let currentIndex = pacmanCurrentIndex;
@@ -416,16 +417,20 @@ class Play extends Component {
         clearInterval(enemyMoveId);
         clearInterval(generateEnemyId);
         clearAllInterval();
+
+        // death animation
         setTimeout(() => {
           this.playDeath();
         }, 1950);
+
+        //ending music
         setTimeout(() => {
           this.playEnding();
         }, 4950);
+
         if (currentClassList) {
           let killer = (currentClassList[0]==="empty" || currentClassList[0]==="pac-dot" || currentClassList[0]==="power-pellet")?currentClassList[1]:currentClassList[0];
           this.setState({killer:killer});
-          // setTimeout(alert(`you lose, died at age of ${this.state.age}, killed by ${killer}`),500);
           setTimeout(()=>{$('.right-info').removeClass('hide')},500);
         } 
       }
@@ -441,6 +446,8 @@ class Play extends Component {
           .addClass('pacman-right');
         startId = setInterval(checkForGameOver, 100);
         healthId = setInterval(checkForHealth, 100);
+
+        // make newly generated batches of enemies move
         enemyMoveId = setInterval(()=>{
           enemies.forEach(enemy => {
             clearInterval(enemy.timerId);
@@ -449,13 +456,14 @@ class Play extends Component {
         }, 1000)
         enemies.forEach(enemy => enemyMove(enemy));
         timePass();
+
+        // wait for playing the opening music
         this.setState({started: true});
       }, 4400)
     }
 
     // make a button to control game start
     const button = document.createElement('button')
-    // button.setAttribute('content', 'test content');
     button.setAttribute("id", "start-btn");
     button.textContent = "Play Now";
     
@@ -465,29 +473,29 @@ class Play extends Component {
 
 
     // enable alan ai
-    if (this.state.selectedOption==="voiceControl") {
-      console.log('hi')
-      this.alanBtnInstance = alanBtn({ 
-        key: '',
-        onCommand: (commandData) => {
-          if (commandData.command === 'move-left') {
-            moveLeft();
-          }
-          if (commandData.command === 'move-right') {
-            moveRight();
-          }
-          if (commandData.command === 'move-up') {
-            moveUp();
-          }
-          if (commandData.command === 'move-down') {
-            moveDown();
-          }
-          if (commandData.command === 'shopping') {
-            shopping();
-          }
-        },
-      });
-    }
+    // if (this.state.selectedOption==="voiceControl") {
+    //   console.log('hi');
+    // }
+    this.alanBtnInstance = alanBtn({ 
+      key: 'YOURAPIKEY',
+      onCommand: (commandData) => {
+        if (commandData.command === 'move-left') {
+          moveLeft();
+        }
+        if (commandData.command === 'move-right') {
+          moveRight();
+        }
+        if (commandData.command === 'move-up') {
+          moveUp();
+        }
+        if (commandData.command === 'move-down') {
+          moveDown();
+        }
+        if (commandData.command === 'shopping') {
+          shopping();
+        }
+      },
+    });
   }
 
   render() {

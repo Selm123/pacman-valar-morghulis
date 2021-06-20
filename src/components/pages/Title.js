@@ -47,7 +47,7 @@ class Title extends Component {
         <p className="sub-title">~ Valar Morghulis ~</p>
         <form className="title-form" onSubmit={this.formSubmit}>
           <input className="usernameInput" type="text" placeholder="Please enter username" onChange={this.onValueChangeUsername} required/>
-          <p>Play Mode:</p>
+          <p>Play Mode: </p>
           <label>
             <input type="radio" name="mode" value="keyboard" checked={this.state.selectedOption === "keyboard"} onChange={this.onValueChangeMode} />
             Keyboard

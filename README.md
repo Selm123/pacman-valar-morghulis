@@ -1,16 +1,19 @@
 # Pacman Vanamogulis
-game of life, not today, it’s not anyone else’s story, it’s your story
+ALL MEN MUST DIE
+
+But maybe
+
+Not today?
+
+It's not anyone else's story, it's your story.
+
 
 ## Schedule
 
 * Thursday:  
-death effect
-styling
-finish other screens
 rewrite code format
 change ghosts pics when they go different directions
 share with social media
-
 
 adjust game difficulty
 fix the bug that enemy go through 393/418
@@ -18,16 +21,7 @@ alan ai not enough fund trigger
 
 
 
-* Future:
-bomb
-"not today" sound effect?
-game of thrones opening
-ai
-regenerate random items (achievements and happiness)
-ranks, database and deploy on firebase or heroku or github
-pacman font
-
-
+## Future iterations:
 
 ## Features (top to low priority):
 0. Make a working pac man game
@@ -76,4 +70,16 @@ username, achivements, happiness, age, initial health, initial money, killed by
 24. not save record, but check ranking
 
 25. achievements is the enemy number that you've killed
+
+26. make money reduced by time passing, force player to move and collect money
+
+27. add how many each enemy you've killed and how many are still there, make achivements higher when you kill more of them
+
+bomb
+"not today" sound effect?
+game of thrones opening
+ai
+regenerate random items (achievements and happiness)
+ranks, database and deploy on firebase or heroku or github
+pacman font
 

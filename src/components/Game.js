@@ -12,8 +12,10 @@ class Game extends Component {
       fortune: 0,
       age: 0,
       username: "",
-      selectedOption: null
+      selectedOption: null,
     };
+    this.changeUserName = this.changeUserName.bind(this);
+    this.changeSelectedOption = this.changeSelectedOption.bind(this);
   }
 
   componentDidMount() {
@@ -27,10 +29,18 @@ class Game extends Component {
     });
   }
 
+  changeUserName = (username) => {
+    this.setState({username: username});
+  }
+
+  changeSelectedOption = (option) => {
+    this.setState({selectedOption: option});
+  }
+
   render() {
     return (
       <div className="main">
-        <Title username={this.state.username} selectedOption={this.state.selectedOption}/>
+        <Title changeUserName={this.changeUserName} changeSelectedOption={this.changeSelectedOption} />
         <Instruction />
         <Play fortune={this.state.fortune} age={this.state.age} username={this.state.username} selectedOption={this.state.selectedOption}/>
         <GameOver />
